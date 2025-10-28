@@ -32,23 +32,21 @@ Used essential Python libraries:
 ### 2. Load the Dataset
 Read the training and validation data files using `pandas.read_csv()` with `delim_whitespace=True` since the dataset is space-separated.
 
-```python
-X_train = pd.read_csv('arcene_train.data', delim_whitespace=True, header=None)
-y_train = pd.read_csv('arcene_train.labels', delim_whitespace=True, header=None)
-X_valid = pd.read_csv('arcene_valid.data', delim_whitespace=True, header=None)
+## 🧩 Standardize the Data
 
-
-## Standardize the Data
-
-Before applying PCA, the dataset is standardized so that each feature has a mean of 0 and a variance of 1.
+Before applying PCA, the dataset is standardized so that each feature has a **mean of 0** and a **variance of 1**.  
 This step ensures that features with large numerical ranges do not dominate the principal components.
 
-## Apply PCA
+---
 
-After standardization, PCA is applied to reduce the high-dimensional feature space into 50 principal components.
+## ⚙️ Apply PCA
+
+After standardization, PCA is applied to reduce the **high-dimensional feature space** into **50 principal components**.  
 This helps capture the most important variance in the data while significantly reducing computational complexity.
 
-## Visualize Explained Variance
+---
 
-The cumulative explained variance curve is plotted to observe how much total variance is captured as the number of components increases.
+## 📊 Visualize Explained Variance
+
+The **cumulative explained variance curve** is plotted to observe how much total variance is captured as the number of components increases.  
 This helps determine the optimal number of components needed to represent most of the data’s information effectively.
